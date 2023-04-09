@@ -2,7 +2,7 @@ import re
 from Enum import *
 
 class TokenTools:
-    def __init__(self) -> None:
+    def __init__(self):
         self.structToken = []
         self.structData = []
         self.cursorPointer = 0
@@ -52,7 +52,12 @@ class TokenTools:
             switch.get(self.structToken[self.cursorPointer])
 
     def synType(self):
-        pass
+        switch = {
+            Command.FRAGMENT : 1,
+            Command.CHAMPIONS: 1
+        }
+
+        counterSwitch += switch.get(self.structToken[self.cursorPointer + 1], 0)
 
     def synChampions(self):
         pass
